@@ -5,6 +5,10 @@ import java.util.Map;
 
 /**
  * Created by Asanga Manage on 11/12/14.
+ * <p/>
+ * Simple tool to provide a return value construct from methods.
+ * This tool is inspired by clojure, hence everything is a map.
+ * <p/>
  */
 public class ReturnValue {
 
@@ -66,15 +70,18 @@ public class ReturnValue {
     private static Map createReturnValueMap(String msg, ResultStatus status, Object... args) {
         HashMap result = new HashMap();
 
-        if (args.length % 2 == 1) {
-            throw new IllegalArgumentException("Even number of parameters expected.");
-        }
+        if (args != null) {
+            if (args.length % 2 == 1) {
+                throw new IllegalArgumentException("Even number of parameters expected.");
+            }
 
-        for (int i = 0; i < args.length - 1; i++) {
-            if (i % 2 == 0) {
-                result.put(args[i], args[i + 1]);
+            for (int i = 0; i < args.length - 1; i++) {
+                if (i % 2 == 0) {
+                    result.put(args[i], args[i + 1]);
+                }
             }
         }
+
         if (msg != null)
             result.put(MESSAGE, msg);
         if (status != null) {
