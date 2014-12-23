@@ -8,9 +8,13 @@ import java.util.Map;
  * <p/>
  * Simple tool to provide a return value construct from methods.
  * This tool is inspired by clojure, hence everything is a map.
+ *
+ * This is not an object which can be returned. This is just a *util class* which generates a
+ * simple MAP.
+ *
  * <p/>
  */
-public class ReturnValue {
+public class ReturnValues {
 
     public static String STATUS = "STATUS";
     public static String MESSAGE = "MESSAGE";
@@ -29,8 +33,10 @@ public class ReturnValue {
         return createReturnValueMap(msg, ResultStatus.SUCCESSFUL, DATA, value);
     }
 
-    /*
-    Short success. Without message.
+    /**
+     * Short success. Without message.
+     * @param args
+     * @return
      */
     public static Map ssuccess(Object... args) {
         return createReturnValueMap(null, ResultStatus.SUCCESSFUL, args);
