@@ -3,4 +3,4 @@ easytypes
 
 Developer productivty contructs.
 
-Todo..
+Todo...
