@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+
 public class ReturnValuesTest {
     @Test
     public void testCreateSSuccessReturnValue_just_msg() throws Exception {
